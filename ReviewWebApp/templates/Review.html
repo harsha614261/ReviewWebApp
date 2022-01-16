@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<Title>ReviewPage</Title>
+		<style>
+			.div1{
+				background-color:cyan;
+				margin-left:19%;
+				margin-right:20%;
+				border-radius:20px;
+			}
+			h2{
+				text-align:center;
+				margin-top:20px;
+			}
+			form{
+				margin-left:25%;
+
+			}
+			h1{
+				text-align:center;
+				color:red;
+			}
+			#q1{
+				margin-left:4%;
+			}
+			#or{
+				margin-left:100px;
+				margin-top:-37px;
+
+			}
+			#logout{
+				margin-left:250px;
+				margin-top:-54px;
+			}
+		</style>
+	</head>
+	<body>
+	&nbsp;
+		<div class="div1">
+		</br>
+		<h2>POST YOUR REVIEW HERE</h2>
+		<h1></h1>
+
+		<form method="post">
+			{% csrf_token %}
+			Name:<input type="text" name="Name" placeholder="enter your name" autofocus required/><br/><br/>
+			Product Name:<input type="text" name="Product" placeholder="enter the product name" autofocus required/><br/><br/>
+			Review:<input type="text" name="Review" placeholder="enter the Review" autofocus required/><br/><br/>
+			Rating (Out of 10):<input type="number" name="Rating" placeholder="Rate the product(0-10)" autofocus required/><br/><br/>
+			Would you like to recommend this product(Yes/No):
+			<input type="text" name="Recommend"/>
+
+			<h2></h2>
+			<input type="submit" id='q1'/>
+
+		</form>
+			<form action="fetch" method="get">
+				<button id="or">Get Other reviews</button>
+			</form>
+			<form action="logout" method="get">
+				<button id="logout">Logout</button>
+			</form>
+
+		</div>
+		<h1>{{Message}}</h1>
+	</body>
+</html>

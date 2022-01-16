@@ -1,0 +1,66 @@
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <title>Other Reviews</title>
+	<style>
+		body{
+		background-color:#808080;
+
+		}
+		h2{
+			text-align:center;
+			text-decoration:underline;
+
+			margin-top:20px;
+
+		}
+		.div1{
+			background-color:cyan;
+			margin-left:20px;
+			margin-right:70%;
+			margin-top:20px;
+			border-radius:20px;
+			overflow:scroll;
+		}
+		button{
+			margin-left:1000px;
+			margin-top:-150px
+			border-radius:20px;
+			position:absolute;
+		}
+		img{
+			width:480px;
+			height:300px;
+			margin-left:820px;
+			margin-top:8%;
+			border-radius:20px;
+			position:fixed;
+		}
+	</style>
+</head>
+<body>
+	<h2>Check Other Reviews</h2>
+	<form action="logout" method="get">
+		<button id="log">Logout</button>
+	</form>
+	<img src="{% static 'img.png' %}"/>
+    {% for index in rev %}
+		<div class='div1'>
+			<b>&nbsp;&nbsp;			             </b>       </br>
+			<b>&nbsp;&nbsp;	Review Number		:</b> {{index.id}}</br>
+			<b>&nbsp;&nbsp; Name of the reviewer:</b> {{index.Name}}</br>
+			<b>&nbsp;&nbsp; Name of the product :</b> {{index.Product_name}}</br>
+			<b>&nbsp;&nbsp; Review			    :</b> {{index.Review}}</br>
+			<b>&nbsp;&nbsp; Rating			    :</b> {{index.Rating}}</br>
+			<b>&nbsp;&nbsp; Would you recommend the product:</b> {{index.Recommendation}}</br>
+			<b>&nbsp;&nbsp;						 </b>       </br>
+		</div>
+    {% endfor %}
+
+
+
+
+</body>
+</html>
